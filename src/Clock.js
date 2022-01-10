@@ -1,27 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import {MContext} from './PanelContext.js';
 
 class Clock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: new Date(),
-            timezone: 'Europe/Berlin'
-        };
-    }
-
-    getDate() {
-        this.setState(state => ({
             date: new Date()
-        }));
-    }
-
-    componentDidMount() {
-        this.interval = setInterval(() => this.getDate(), 1000);
-    }
-    
-    componentWillUnmount() {
-        clearInterval(this.interval);
+        };
     }
 
     getDayFromIndex(index) {
@@ -59,20 +45,43 @@ class Clock extends React.Component {
         dateString = dateString.replace(",","");
         return dateString;
     }
+
+    getDate() {
+        this.setState(state => ({
+            date: new Date()
+        }));
+    }
+
+    displayClock(context) {
+        try {
+            return( 
+                <div className="clockPanel">
+                    <p>{context.state.clock.timezone}:</p>
+                    {this.getDayFromIndex(this.state.date.getDay())}, {this.reformatDate(this.state.date.toLocaleString("de-DE", {timeZone: context.state.clock.timezone}))}
+                </div>
+             );
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.getDate(), 1000);
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
     
     render() {
         return (
-          <div>
-            <p>{this.state.timezone}:</p>
-            {this.getDayFromIndex(this.state.date.getDay())}, {this.reformatDate(this.state.date.toLocaleString("de-DE", {timeZone: this.state.timezone}))}
-          </div>
+            <MContext.Consumer>
+                {(context) => (
+                    this.displayClock(context)
+                )}
+            </MContext.Consumer>
         );
     }
 }
-
-ReactDOM.render(
-    <Clock />,
-    document.getElementById('root')
-);
 
 export default Clock;

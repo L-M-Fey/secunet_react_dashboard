@@ -1,0 +1,18 @@
+[
+    {
+        "key": "atdPercentage",
+        "value": 40
+    },
+    {
+        "key": "anomalyPercentage",
+        "value": 100
+    },
+    {
+        "key": "compliancePercentage",
+        "value": 100
+    },
+    {
+        "key": "sensorPercentage",
+        "value": 0
+    }
+]

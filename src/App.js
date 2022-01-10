@@ -2,10 +2,10 @@ import logo from './images/secunet-monitor-logo.png';
 import complianceIcon from './images/ComplianceIcon.svg';
 import anomaliesIcon from './images/AnomaliesIcon.svg';
 import atIcon from './images/AdvancedThreatsIcon.svg';
-import configTab from './images/ConfigTab.svg';
 import './App.css';
 
-import Clock from './Clock.js';
+import PanelContext from './PanelContext.js';
+import Panel from './Panel.js'
 
 function App() {
   return (
@@ -47,45 +47,15 @@ function App() {
         </div>
         <div className="right">
           <div className="panelGrid">
-            <div className="flowBox tile" data-sizex="1" data-sizey="1" data-row="1" data-col="1">
-              <div className="panel">
-                <div className="panelHeader">
-                  <input type="text" value="Uhr" placeholder="Uhr" className="headerName borderlessInput"/>
-                  <div className="headerButtons">
-                    <button type="button" className="factoryButton imageButton">
-                      <img className="buttonIcon" src={configTab} alt="Config"/>
-                    </button>
-                  </div>
-                </div>
-                <div className="clockPanel">
-                  <Clock></Clock>
-                </div>
-              </div>
-            </div>
-            <div className="flowBox tile" data-sizex="1" data-sizey="1" data-row="1" data-col="2">
-              <div className="panel">
-                <div className="panelHeader">
-                  <input type="text" value="Anomalien" placeholder="Anomalien" className="headerName borderlessInput"/>
-                  <div className="headerButtons">
-                    <button type="button" className="factoryButton imageButton">
-                      <img className="buttonIcon" src={configTab} alt="Config"/>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flowBox tile" data-sizex="1" data-sizey="1" data-row="1" data-col="3">
-              <div className="panel">
-                <div className="panelHeader">
-                  <input type="text" value="Kennzeichen" placeholder="Kennzeichen" className="headerName borderlessInput"/>
-                  <div className="headerButtons">
-                    <button type="button" className="factoryButton imageButton">
-                      <img className="buttonIcon" src={configTab} alt="Config"/>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PanelContext>
+              <Panel parentName="clock" dataSizeX="1" dataSizeY="1" dataRow="1" dataCol="1"></Panel>
+            </PanelContext>
+            <PanelContext>
+              <Panel parentName="anomalies" dataSizeX="1" dataSizeY="1" dataRow="1" dataCol="2"></Panel>
+            </PanelContext>
+            <PanelContext>
+              <Panel parentName="indicator" dataSizeX="1" dataSizeY="1" dataRow="1" dataCol="3"></Panel>
+            </PanelContext>
           </div>
         </div>
       </div>
