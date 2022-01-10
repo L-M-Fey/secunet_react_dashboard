@@ -1,0 +1,80 @@
+[
+    {
+        "time": 0,
+        "high": 5,
+        "medium": 28,
+        "low": 32
+    },
+    {
+        "time": 5,
+        "high": 6,
+        "medium": 26,
+        "low": 24
+    },
+    {
+        "time": 10,
+        "high": 7,
+        "medium": 24,
+        "low": 16
+    },
+    {
+        "time": 15,
+        "high": 8,
+        "medium": 28,
+        "low": 20
+    },
+    {
+        "time": 20,
+        "high": 9,
+        "medium": 30,
+        "low": 24
+    },
+    {
+        "time": 25,
+        "high": 7,
+        "medium": 32,
+        "low": 28
+    },
+    {
+        "time": 30,
+        "high": 5,
+        "medium": 28,
+        "low": 32
+    },
+    {
+        "time": 35,
+        "high": 6,
+        "medium": 30,
+        "low": 40
+    },
+    {
+        "time": 40,
+        "high": 7,
+        "medium": 32,
+        "low": 48
+    },
+    {
+        "time": 45,
+        "high": 9,
+        "medium": 34,
+        "low": 32
+    },
+    {
+        "time": 50,
+        "high": 10,
+        "medium": 36,
+        "low": 24
+    },
+    {
+        "time": 55,
+        "high": 11,
+        "medium": 38,
+        "low": 28
+    },
+    {
+        "time": 60,
+        "high": 12,
+        "medium": 32,
+        "low": 32
+    }
+]
